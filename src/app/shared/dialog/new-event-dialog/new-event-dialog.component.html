@@ -1,0 +1,119 @@
+<div class="confirm-header">
+  <h1 mat-dialog-title>Add New Event </h1>
+  <!-- <button > -->
+  <i mat-icon-button class="material-icons close pointer" [mat-dialog-close]='false'>close</i>
+  <!-- </button> -->
+</div>
+<div class="dialog-content">
+  <div>
+    <label>Subject</label>
+    <mat-form-field class="glb-ctrl-search" [floatLabel]="'never'">
+      <input matInput placeholder="Recap your call" value="">
+    </mat-form-field>
+  </div>
+  <div class="justify-flex pad-sm">
+    <div>
+      <label>Start</label>
+      <mat-form-field class="glbl-datepicker" [floatLabel]="'never'">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="parallel">
+      <label>Time</label>
+      <div class="time-picker">
+        <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
+        <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+        <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
+      </div>
+    </div>
+  </div>
+  <div class="justify-flex pad-sm">
+    <div>
+      <label>End</label>
+      <mat-form-field class="glbl-datepicker" [floatLabel]="'never'">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker [dateClass]="dateClass" #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="parallel">
+      <label>Time</label>
+      <div class="time-picker">
+        <input [ngxTimepicker]="toggleTimepicker1" [disableClick]="true" readonly>
+        <ngx-material-timepicker-toggle [for]="toggleTimepicker1"></ngx-material-timepicker-toggle>
+        <ngx-material-timepicker #toggleTimepicker1></ngx-material-timepicker>
+      </div>
+    </div>
+  </div>
+  <div>
+    <mat-checkbox class="glbl-checkbox" [labelPosition]="'after'">
+      All Day Event
+    </mat-checkbox>
+  </div>
+  <div>
+    <label>Commenets</label>
+    <mat-form-field class="glb-textarea" [floatLabel]="'never'">
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+  <div>
+    <label>Name</label>
+    <mat-form-field class="glb-ctrl-search" [floatLabel]="'never'">
+      <input matInput placeholder="" value="">
+    </mat-form-field>
+  </div>
+  <div>
+    <label>Related To</label>
+
+    <mat-form-field class="glb-ctrl-search pad-xl" [floatLabel]="'never'">
+      <input matInput placeholder="" [(ngModel)]="selectedItem">
+      <img matPrefix mat-button [matMenuTriggerFor]="menu" [attr.src]='imageItemPath'>
+    </mat-form-field>
+    <mat-menu #menu="matMenu" class="menu-xl">
+      <button mat-menu-item (click)="selcetedItem('Accounts','assets/images1/account_120.png')">
+        <img matPrefix mat-button src="assets/images1/account_120.png" class="blue">
+        <span>Accounts</span>
+      </button>
+      <button mat-menu-item>
+        <img matPrefix mat-button src="assets/images1/accounts/asset_relationship_120.png" class="green">
+        <span>Relationship</span>
+      </button>
+      <button mat-menu-item>
+        <img matPrefix mat-button src="assets/images1/accounts/maintenance_plan_120.png" class="red">
+        <span>Maintenance</span>
+      </button>
+      <button mat-menu-item>
+        <img matPrefix mat-button src="assets/images1/accounts/product_120.png" class="blue">
+        <span>Invoice</span>
+      </button>
+      <button mat-menu-item>
+        <img matPrefix mat-button src="assets/images1/accounts/orders_120.png" class="orange">
+        <span>Orders</span>
+      </button>
+      <button mat-menu-item>
+        <img matPrefix mat-button src="assets/images1/accounts/product_120.png" class="yellow">
+        <span>Products</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div>
+    <label>Location</label>
+    <mat-form-field class="glb-ctrl-search" [floatLabel]="'never'">
+      <input matInput placeholder="Location" value="">
+    </mat-form-field>
+  </div>
+</div>
+<div class="dialog-footer">
+  <div class="dialog-footer">
+    <button mat-button class="glbl-btn  green-btn" [mat-dialog-close]='false'>
+      <span>Save</span>
+    </button>
+    <button mat-button class="glbl-btn" [mat-dialog-close]='false'>
+      <span>Cancel</span>
+    </button>
+  </div>
+</div>
